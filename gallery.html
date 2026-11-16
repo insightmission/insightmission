@@ -1,365 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Insight Mission</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="gallery.css">
-    <style>
-        .slide-right {
-            animation: slide-right 0.3s ease-out;
-        }
-        .slide-left {
-            animation: slide-left 0.3s ease-out;
-        }
-        @keyframes slide-right {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(20%);
-            }
-        }
-        @keyframes slide-left {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-20%);
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Insight Mission</title>
+<link rel="icon" type="image/png" href="images/Englintend.png">
+<meta name="description" content="Photos from Insight Mission events And Sunil Kuruvilla, workshops and programs across Kerala.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0f3d3a; --leaf:#2f7d5b; --gold:#e8b84a; --mist:#eef4f1; --ink:#14211f; --white:#fff;
+  --muted:#4a5c58; --line:#cfdcd7;
+  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.65 var(--body);color:var(--ink);background:var(--white)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:99}
+.skip:focus{left:0}
+h1,h2,h3{font-family:var(--head);line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:1rem}
+h3{font-size:1.2rem;margin-bottom:.6rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:6px;font:700 1rem var(--head);text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:#f3cb6d}
+.btn.ghost{color:var(--white)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+/* header */
+header{background:var(--forest);color:var(--white);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;font:700 1.25rem var(--head);text-decoration:none}
+.brand img{height:44px;width:auto;border-radius:6px}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav a{text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--gold)}
+.menu{display:none;background:none;border:2px solid var(--white);color:var(--white);border-radius:6px;padding:.45rem .8rem;font:600 .95rem var(--body);cursor:pointer}
+
+/* hero: the quote is the design */
+.hero{background:var(--forest);color:var(--white);padding:clamp(3rem,9vw,6.5rem) 0 clamp(3rem,8vw,5.5rem)}
+.hero h1{font-weight:500;margin-bottom:2rem}
+.hero h1 span{display:block;opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+.hero h1 .a{font-size:clamp(1.1rem,2.6vw,1.5rem);color:#b9d3cb}
+.hero h1 .b{font-size:clamp(1.6rem,4.6vw,2.7rem);margin:.35rem 0;animation-delay:.35s}
+.hero h1 .c{font-size:clamp(2.2rem,7.4vw,4.8rem);font-weight:700;color:var(--gold);animation-delay:.75s}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero p{max-width:34rem;font-size:1.15rem;color:#d7e6e1;margin-bottom:1.8rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.9rem}
+
+/* sections */
+section{padding:clamp(3rem,7vw,5rem) 0}
+.alt{background:var(--mist)}
+.lead{max-width:42rem;color:var(--muted)}
+.mission{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.facts{display:grid;gap:1.2rem}
+.facts div{border-left:4px solid var(--leaf);padding-left:1rem}
+.facts strong{display:block;font:700 2rem var(--head);color:var(--forest)}
+.facts span{color:var(--muted)}
+.who{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem;list-style:none;padding:0}
+.who li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem}
+
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.group{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--leaf);border-radius:8px;padding:1.5rem}
+.group:nth-child(2){border-top-color:var(--gold)}
+.group:nth-child(3){border-top-color:var(--forest)}
+.group p{color:var(--muted);font-size:.98rem;margin-bottom:.9rem}
+.group ul{padding-left:1.1rem}
+.group li{margin:.35rem 0}
+
+/* classes */
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.class{border:1px solid var(--line);border-radius:8px;padding:1.4rem;background:var(--white)}
+.class dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;margin:.8rem 0 1.1rem;font-size:.97rem}
+.class dt{color:var(--muted)}
+.class dd{font-weight:600}
+.empty{margin-top:2rem;border:2px dashed var(--line);border-radius:8px;padding:1.6rem;background:var(--white)}
+
+/* closing + footer */
+.close{background:var(--leaf);color:var(--white);text-align:center}
+.close p{max-width:34rem;margin:0 auto 1.6rem}
+footer{background:var(--ink);color:#c9d6d2;padding:3rem 0 2rem;font-size:.97rem}
+.cols{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:2.5rem}
+footer h3{color:var(--white);font-size:1.05rem}
+footer ul{list-style:none;padding:0}
+footer li{margin:.35rem 0}
+footer a{text-underline-offset:3px}
+.legal{margin-top:2rem;padding-top:1.2rem;border-top:1px solid #2c3d39;font-size:.9rem}
+
+
+/* interactive */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:50}
+header{transition:box-shadow .25s}
+header.scrolled{box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.btn{transition:background .2s,color .2s,transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.chip{font:600 .97rem var(--body);padding:.5rem 1.1rem;border-radius:999px;border:2px solid var(--leaf);background:var(--white);color:var(--forest);cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--white)}
+.group{transition:transform .3s,box-shadow .3s,opacity .25s}
+.group:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(15,61,58,.14)}
+.group.off{opacity:0;transform:scale(.95);pointer-events:none}
+.group li{transition:transform .2s,color .2s}
+.group li:hover{transform:translateX(6px);color:var(--leaf)}
+.who li{transition:background .2s,transform .2s,color .2s;cursor:default}
+.who li:hover{background:var(--forest);color:var(--white);transform:translateY(-2px)}
+.facts div{transition:border-color .3s,transform .3s}
+.facts div:hover{border-color:var(--gold);transform:translateX(6px)}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .group.reveal.in:hover{transform:translateY(-6px)}
+.js .group.reveal.off{opacity:0;transform:scale(.95);pointer-events:none;transition-delay:0ms!important}
+
+
+/* phone display */
+.fab{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:60}
+.fab-btn{display:flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);border:0;border-radius:999px;padding:.8rem 1.2rem;font:700 1rem var(--head);cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.28);animation:ring 2s ease-out 1.2s 3;transition:transform .15s}
+.fab-btn:hover{transform:translateY(-2px)}
+.fab-btn svg{width:20px;height:20px;fill:var(--ink)}
+@keyframes ring{0%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 0 rgba(232,184,74,.7)}100%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 20px rgba(232,184,74,0)}}
+.fab-pop{position:absolute;right:0;bottom:calc(100% + .7rem);width:min(310px,calc(100vw - 2rem));background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:1.1rem;box-shadow:0 16px 36px rgba(0,0,0,.25);opacity:0;transform:translateY(10px) scale(.97);transform-origin:100% 100%;pointer-events:none;transition:opacity .2s,transform .2s}
+.fab.open .fab-pop{opacity:1;transform:none;pointer-events:auto}
+.fab-pop h2{font-size:1.1rem;margin-bottom:.2rem}
+.fab-pop p{font-size:.92rem;color:var(--muted);margin-bottom:.8rem}
+.numrow{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.numrow a{flex:1;text-align:center;background:var(--forest);color:var(--white);text-decoration:none;font:700 1.02rem var(--head);padding:.65rem .5rem;border-radius:8px;transition:background .2s}
+.numrow a:hover{background:var(--leaf)}
+.numrow button{font:600 .9rem var(--body);padding:.6rem .8rem;border:2px solid var(--leaf);background:var(--white);color:var(--forest);border-radius:8px;cursor:pointer;min-width:4.6rem}
+.numrow button.ok{background:var(--leaf);color:var(--white)}
+@media (max-width:520px){.fab-btn span{display:none}.fab-btn{padding:.9rem}}
+@media (prefers-reduced-motion:reduce){.fab-btn{animation:none}.fab-pop,.fab-btn{transition:none}}
+
+@media (max-width:820px){
+  .menu{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:68px;background:var(--forest);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav ul.open{display:flex}
+  nav a{display:block;padding:.8rem 0}
+  .mission,.groups,.cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 span{animation:none;opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.chip,.group,.group li,.who li,.facts div{transition:none}
+  .btn:hover,.chip:hover,.group:hover,.group li:hover,.who li:hover,.facts div:hover{transform:none}
+}
+
+/* gallery page */
+.pagehead{background:var(--forest);color:var(--white);padding:clamp(3rem,8vw,5.5rem) 0}
+.pagehead h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:700;margin-bottom:1rem}
+.pagehead p{max-width:36rem;font-size:1.2rem;color:#d7e6e1}
+.gmeta{color:var(--muted);margin-bottom:1.5rem}
+.masonry{column-count:3;column-gap:1.1rem}
+.tile{position:relative;display:block;width:100%;margin:0 0 1.1rem;padding:0;border:0;border-radius:10px;overflow:hidden;background:var(--mist);cursor:zoom-in;break-inside:avoid;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,box-shadow .3s}
+.tile.ready{opacity:1;transform:none}
+.tile:hover{box-shadow:0 14px 28px rgba(15,61,58,.2)}
+.tile img{display:block;width:100%;height:auto;min-height:120px;transition:transform .6s}
+.tile:hover img{transform:scale(1.06)}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1rem .8rem;text-align:left;color:var(--white);font:600 1rem var(--body);background:linear-gradient(transparent,rgba(10,41,39,.85));opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.tile:hover .cap,.tile:focus-visible .cap{opacity:1;transform:none}
+.more{display:block;margin:1.5rem auto 0;cursor:pointer;font-family:var(--head)}
+.more[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:rgba(7,28,26,.94);animation:lbin .25s ease}
+.lb[hidden]{display:none}
+@keyframes lbin{from{opacity:0}}
+.lb figure{margin:0;max-width:min(92vw,1100px);text-align:center}
+.lb img{max-width:100%;max-height:80vh;border-radius:8px;transition:opacity .2s,transform .25s}
+.lb img.swap{opacity:0;transform:scale(.97)}
+.lb figcaption{color:#d7e6e1;margin-top:.8rem}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:var(--white);border:2px solid rgba(255,255,255,.4);border-radius:50%;width:48px;height:48px;font-size:1.7rem;line-height:1;cursor:pointer;transition:background .2s,transform .2s}
+.lb button:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.lb-close{top:max(1rem,env(safe-area-inset-top));right:1rem}
+.lb-prev{left:1rem;top:50%;margin-top:-24px}
+.lb-next{right:1rem;top:50%;margin-top:-24px}
+body.lock{overflow:hidden}
+@media (max-width:900px){.masonry{column-count:2}}
+@media (max-width:520px){.masonry{column-count:1}.lb-prev,.lb-next{top:auto;bottom:1rem;margin-top:0}.lb-prev{left:calc(50% - 60px)}.lb-next{right:calc(50% - 60px)}}
+@media (prefers-reduced-motion:reduce){.tile,.tile img,.tile .cap,.lb,.lb img{transition:none;animation:none}.tile{opacity:1;transform:none}.tile:hover img{transform:none}}
+</style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="index" class="logo">Insight Mission</a>
-        <div class="nav-links">
-            <a href="index">Home</a>
-            <a href="about">About Us</a>
-            <a href="founder">Our Founder</a>
-            <a href="classes">Classes</a>
-            <a href="gallery">Gallery</a>
-            <a href="contact">Contact</a>
-        </div>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="images/Englintend.png" alt="" width="44" height="44"><span>Insight Mission</span></a>
+    <button class="menu" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <nav aria-label="Main">
+      <ul id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/founder">Our founder</a></li>
+        <li><a href="/classes">Classes</a></li>
+        <li><a href="/gallery" aria-current="page">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </nav>
-
-    <div class="main-content">
-        <!-- Gallery Section -->
-        <section class="gallery-section">
-            <div class="section-title">
-                <h2>Our Gallery</h2>
-                <p>Explore our past events, workshops, and success stories</p>
-            </div>
-            <div class="gallery-container" id="gallery-container"></div>
-        </section>
+  </div>
+</header>
+<main id="main">
+  <div class="pagehead">
+    <div class="wrap">
+      <h1>Our gallery</h1>
+      <p>Moments from our events, workshops and success stories. Select a photo to view it larger.</p>
     </div>
+  </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <div class="lightbox-navigation">
-                <button class="prev-button" aria-label="Previous image">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <img src="" alt="Gallery Image" id="lightbox-image">
-                <button class="next-button" aria-label="Next image">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <button class="close-lightbox" aria-label="Close lightbox" style="position: absolute; top: 10px; right: 10px;">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
+  <section>
+    <div class="wrap">
+      <p class="gmeta" id="gmeta" aria-live="polite">Loading photos…</p>
+      <div class="masonry" id="grid"></div>
+      <button class="btn solid more" id="more" type="button">Show more photos</button>
     </div>
+  </section>
 
-    <script>
-        // Function to toggle mobile menu
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
+  <section class="close">
+    <div class="wrap">
+      <h2>Want a program like this for your school or team?</h2>
+      <p>Tell us who it is for and we will suggest the right workshop.</p>
+      <a class="btn solid" href="/contact">Get in touch</a>
+    </div>
+  </section>
+</main>
 
-        // Function to create a gallery item
-        function createGalleryItem(imagePath) {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <img src="Gallery/${imagePath}" alt="Gallery Image" class="gallery-image">
-                <div class="gallery-overlay">
-                    <i class="fas fa-expand"></i>
-                </div>
-            `;
-            return galleryItem;
-        }
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <button class="lb-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next photo">&rsaquo;</button>
+</div>
+<footer>
+  <div class="wrap cols">
+    <div>
+      <h3>Insight Mission</h3>
+      <p>Personal Guidance and Life Enrichment Centre. Training, mentoring and guidance for students, families, teachers and organisations in Kerala.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="/about">About us</a></li><li><a href="/founder">Our founder</a></li>
+        <li><a href="/classes">Classes</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+919656144712">+91 96561 44712</a></li>
+        <li><a href="tel:+919847400712">+91 98474 00712</a></li>
+        <li><a href="mailto:insightmission@gmail.com">insightmission@gmail.com</a></li>
+        <li><a href="mailto:sunil_kuruvilla@rediffmail.com">sunil_kuruvilla@rediffmail.com</a></li>
+      </ul>
+      <h3 style="margin-top:1.2rem">Follow</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/konnayilavenue" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/sunil__kuruvilla" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/sunil-d-kuruvilla-207b8443/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@sunilkuruvilla" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">&copy; 2026 Insight Mission. All rights reserved.</div>
+</footer>
+<div class="fab" id="fab">
+  <div class="fab-pop" id="fab-pop" role="dialog" aria-label="Phone numbers">
+    <h2>Call Insight Mission</h2>
+    <p>Tap a number to call, or copy it.</p>
+    <div class="numrow"><a href="tel:+919656144712">+91 96561 44712</a><button type="button" data-copy="+91 96561 44712">Copy</button></div>
+    <div class="numrow"><a href="tel:+919847400712">+91 98474 00712</a><button type="button" data-copy="+91 98474 00712">Copy</button></div>
+  </div>
+  <button class="fab-btn" id="fab-btn" aria-expanded="false" aria-controls="fab-pop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>Call us</span></button>
+</div>
 
-        // Function to handle image loading
-        function handleImageLoad(imageElement, galleryItem) {
-            imageElement.onerror = function() {
-                galleryItem.remove();
-            };
-        }
+<script>
+var btn=document.querySelector('.menu'),list=document.getElementById('nav-list');
+btn.addEventListener('click',function(){var o=list.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var bar=document.getElementById('progress'),head=document.querySelector('header');
+function onScroll(){var h=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.transform='scaleX('+(h>0?window.scrollY/h:0)+')';head.classList.toggle('scrolled',window.scrollY>10);}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-        // Function to initialize lightbox functionality
-        function initializeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const closeLightbox = document.querySelector('.close-lightbox');
-            const prevButton = document.querySelector('.prev-button');
-            const nextButton = document.querySelector('.next-button');
-            
-            // Get all gallery items and images
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
-            
-            // Add click event to each gallery item
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    lightbox.classList.add('active');
-                    lightboxImage.src = galleryImages[index].src;
-                    currentImageIndex = index;
-                });
-            });
+// ---- Gallery setup: edit these three lines to match your Gallery folder ----
+var FOLDER='Gallery/', EXT='.jpeg', TOTAL=80;   // photos are Gallery/1.jpeg ... Gallery/TOTAL.jpeg
+// Photos with a caption (shown first). Add more as number: 'caption'
+var captions={21:'ROOTS & WINGS',76:'SHE-POWER',33:'Career guidance with parents',61:'Parenting guidance',31:'Teachers development',42:'Sunil D. Kuruvilla, founder'};
+// -----------------------------------------------------------------------------
 
-            // Close lightbox
-            closeLightbox.addEventListener('click', () => {
-                lightbox.classList.remove('active');
-            });
+var order=Object.keys(captions).map(Number);
+for(var n=1;n<=TOTAL;n++){if(!(n in captions))order.push(n);}
+var grid=document.getElementById('grid'),more=document.getElementById('more'),meta=document.getElementById('gmeta');
+var FIRST=24,BATCH=12,next=0;
+function tiles(){return [].slice.call(grid.children);}
+function updateMeta(){var c=tiles().length;meta.textContent=c?('Showing '+c+' photo'+(c===1?'':'s')):'Loading photos…';}
+function addBatch(){
+  var end=Math.min(next+(next===0?FIRST:BATCH),order.length);
+  for(;next<end;next++){
+    (function(num){
+      var t=document.createElement('button');t.type='button';t.className='tile';
+      var cap=captions[num],label=cap?cap:'Gallery photo';
+      var img=new Image();img.alt=cap?cap:'Insight Mission event photo';img.loading='lazy';img.decoding='async';
+      img.onload=function(){t.classList.add('ready');updateMeta();};
+      img.onerror=function(){t.remove();updateMeta();};
+      img.src=FOLDER+num+EXT;
+      t.setAttribute('aria-label','View photo: '+label);
+      t.appendChild(img);
+      if(cap){var s=document.createElement('span');s.className='cap';s.textContent=cap;t.appendChild(s);}
+      t.addEventListener('click',function(){openLb(t);});
+      grid.appendChild(t);
+    })(order[next]);
+  }
+  if(next>=order.length)more.hidden=true;
+  updateMeta();
+}
+more.addEventListener('click',addBatch);
+addBatch();
 
-            // Close lightbox when clicking outside
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    lightbox.classList.remove('active');
-                }
-            });
-
-            // Navigation
-            let currentImageIndex = 0;
-            
-            prevButton.addEventListener('click', () => {
-                const lightboxImage = document.getElementById('lightbox-image');
-                const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
-                
-                // Load new image first from right
-                const newImage = new Image();
-                newImage.src = galleryImages[(currentImageIndex - 1 + galleryImages.length) % galleryImages.length].src;
-                
-                newImage.onload = () => {
-                    // Add slide animation class
-                    lightboxImage.classList.add('slide-right');
-                    
-                    // Wait for animation to complete
-                    setTimeout(() => {
-                        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-                        lightboxImage.src = newImage.src;
-                        
-                        // Remove slide class
-                        lightboxImage.classList.remove('slide-right');
-                    }, 300);
-                };
-            });
-
-            nextButton.addEventListener('click', () => {
-                const lightboxImage = document.getElementById('lightbox-image');
-                const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
-                
-                // Load new image first from left
-                const newImage = new Image();
-                newImage.src = galleryImages[(currentImageIndex + 1) % galleryImages.length].src;
-                
-                newImage.onload = () => {
-                    // Add slide animation class
-                    lightboxImage.classList.add('slide-left');
-                    
-                    // Wait for animation to complete
-                    setTimeout(() => {
-                        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-                        lightboxImage.src = newImage.src;
-                        
-                        // Remove slide class
-                        lightboxImage.classList.remove('slide-left');
-                    }, 300);
-                };
-            });
-
-            // Touch swipe functionality
-            let touchStartX = 0;
-            let touchEndX = 0;
-            let isSwiping = false;
-
-            lightboxImage.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-                isSwiping = true;
-            });
-
-            lightboxImage.addEventListener('touchmove', (e) => {
-                if (!isSwiping) return;
-                touchEndX = e.touches[0].clientX;
-            });
-
-            lightboxImage.addEventListener('touchend', () => {
-                const swipeThreshold = 50;
-                const swipeLength = touchEndX - touchStartX;
-
-                if (Math.abs(swipeLength) > swipeThreshold) {
-                    const lightboxImage = document.getElementById('lightbox-image');
-                    const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
-                    
-                    if (swipeLength > 0) {
-                        // Swipe right - go to previous image
-                        lightboxImage.classList.add('slide-right');
-                        setTimeout(() => {
-                            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-                            lightboxImage.src = galleryImages[currentImageIndex].src;
-                            lightboxImage.classList.remove('slide-right');
-                        }, 300);
-                    } else {
-                        // Swipe left - go to next image
-                        lightboxImage.classList.add('slide-left');
-                        setTimeout(() => {
-                            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-                            lightboxImage.src = galleryImages[currentImageIndex].src;
-                            lightboxImage.classList.remove('slide-left');
-                        }, 300);
-                    }
-                }
-                isSwiping = false;
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (lightbox.classList.contains('active')) {
-                    switch(e.key) {
-                        case 'Escape':
-                            lightbox.classList.remove('active');
-                            break;
-                        case 'ArrowLeft':
-                            prevButton.click();
-                            break;
-                        case 'ArrowRight':
-                            nextButton.click();
-                            break;
-                    }
-                }
-            });
-        }
-
-        // Function to load images from the Gallery folder
-        function loadGalleryImages() {
-            const galleryContainer = document.getElementById('gallery-container');
-            
-            // Clear existing gallery items
-            galleryContainer.innerHTML = '';
-
-            // List of image files in the Gallery folder
-            const imageFiles = [
-                '1.jpeg',
-                '2.jpeg',
-                '3.jpeg',
-                '4.jpeg',
-                '5.jpeg',
-                '6.jpeg',
-                '7.jpeg',
-                '8.jpeg',
-                '9.jpeg',
-                '10.jpeg',
-                '11.jpeg',
-                '12.jpeg',
-                '13.jpeg',
-                '14.jpeg',
-                '15.jpeg',
-                '16.jpeg',
-                '17.jpeg',
-                '18.jpeg',
-                '19.jpeg',
-                '20.jpeg',
-                '21.jpeg',
-                '22.jpeg',
-                '23.jpeg',
-                '24.jpeg',
-                '25.jpeg',
-                '26.jpeg',
-                '27.jpeg',
-                '28.jpeg',
-                '29.jpeg',
-                '30.jpeg',
-                '31.jpeg',
-                '32.jpeg',
-                '33.jpeg',
-                '34.jpeg',
-                '35.jpeg',
-                '36.jpeg',
-                '37.jpeg',
-                '38.jpeg',
-                '39.jpeg',
-                '40.jpeg',
-                '41.jpeg',
-                '42.jpeg',
-                '43.jpeg',
-                '44.jpeg',
-                '45.jpeg',
-                '46.jpeg',
-                '47.jpeg',
-                '48.jpeg',
-                '49.jpeg',
-                '50.jpeg',
-                '51.jpeg',
-                '52.jpeg',
-                '53.jpeg',
-                '54.jpeg',
-                '55.jpeg',
-                '56.jpeg',
-                '57.jpeg',
-                '58.jpeg',
-                '59.jpeg',
-                '60.jpeg',
-                '61.jpeg',
-                '62.jpeg',
-                '63.jpeg',
-                '64.jpeg',
-                '65.jpeg',
-                '66.jpeg',
-                '67.jpeg',
-                '68.jpeg',
-                '69.jpeg',
-                '70.jpeg',
-                '71.jpeg',
-                '72.jpeg',
-                '73.jpeg',
-                '74.jpeg',
-                '75.jpeg',
-                '76.jpeg',
-                '77.jpeg',
-                '78.jpeg'
-            ];
-
-            // Create gallery items for each image
-            imageFiles.forEach(imageFile => {
-                const galleryItem = createGalleryItem(imageFile);
-                galleryContainer.appendChild(galleryItem);
-
-                // Get the image element and set up error handling
-                const imageElement = galleryItem.querySelector('img');
-                handleImageLoad(imageElement, galleryItem);
-            });
-
-            // Initialize lightbox functionality
-            initializeLightbox();
-        }
-
-        // Add event listener for hamburger menu
-        document.querySelector('.hamburger').addEventListener('click', toggleMobileMenu);
-
-        // Load gallery images when the page loads
-        document.addEventListener('DOMContentLoaded', loadGalleryImages);
-    </script>
+// ---- Lightbox ----
+var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),cur=null,opener=null;
+function show(t){
+  var all=tiles(),i=all.indexOf(t),im=t.querySelector('img');
+  cur=t;
+  function set(){
+    lbImg.src=im.src;lbImg.alt=im.alt;
+    lbCap.textContent=(t.querySelector('.cap')?t.querySelector('.cap').textContent+' · ':'')+'Photo '+(i+1)+' of '+all.length;
+    lbImg.classList.remove('swap');
+  }
+  if(reduce||lb.hidden){set();}else{lbImg.classList.add('swap');setTimeout(set,180);}
+}
+function openLb(t){opener=t;lb.hidden=false;document.body.classList.add('lock');show(t);lb.querySelector('.lb-close').focus();}
+function closeLb(){lb.hidden=true;document.body.classList.remove('lock');if(opener&&document.contains(opener))opener.focus();}
+function step(d){var all=tiles(),i=all.indexOf(cur);if(i<0)return;show(all[(i+d+all.length)%all.length]);}
+lb.querySelector('.lb-close').addEventListener('click',closeLb);
+lb.querySelector('.lb-prev').addEventListener('click',function(){step(-1);});
+lb.querySelector('.lb-next').addEventListener('click',function(){step(1);});
+lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+document.addEventListener('keydown',function(e){
+  if(lb.hidden)return;
+  if(e.key==='Escape')closeLb();
+  else if(e.key==='ArrowLeft')step(-1);
+  else if(e.key==='ArrowRight')step(1);
+  else if(e.key==='Tab'){
+    var f=[].slice.call(lb.querySelectorAll('button')),first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
+var sx=null;
+lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)step(dx<0?1:-1);sx=null;});
+(function(){
+  var fab=document.getElementById('fab'),b=document.getElementById('fab-btn');
+  function set(o){fab.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!fab.classList.contains('open'));});
+  document.addEventListener('click',function(e){if(!fab.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false);b.focus();}});
+  [].forEach.call(fab.querySelectorAll('[data-copy]'),function(c){
+    c.addEventListener('click',function(){
+      var t=c.dataset.copy;
+      function done(){c.textContent='Copied';c.classList.add('ok');setTimeout(function(){c.textContent='Copy';c.classList.remove('ok');},1600);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){});}
+      else{var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');done();}catch(_){}document.body.removeChild(x);}
+    });
+  });
+})();
+</script>
 </body>
 </html>
