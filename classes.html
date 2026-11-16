@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classes | Insight Mission</title>
+<meta name="description" content="Explore Insight Mission classes: ROOTS &amp; WINGS for teens, SHE-POWER for girls, career guidance with parents, parenting guidance and teacher development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0f3d3a; --leaf:#2f7d5b; --gold:#e8b84a; --mist:#eef4f1; --ink:#14211f; --white:#fff;
+  --muted:#4a5c58; --line:#cfdcd7;
+  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.65 var(--body);color:var(--ink);background:var(--white)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:99}
+.skip:focus{left:0}
+h1,h2,h3{font-family:var(--head);line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:1rem}
+h3{font-size:1.2rem;margin-bottom:.6rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:6px;font:700 1rem var(--head);text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:#f3cb6d}
+.btn.ghost{color:var(--white)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+/* header */
+header{background:var(--forest);color:var(--white);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;font:700 1.25rem var(--head);text-decoration:none}
+.brand img{height:44px;width:auto;border-radius:6px}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav a{text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--gold)}
+.menu{display:none;background:none;border:2px solid var(--white);color:var(--white);border-radius:6px;padding:.45rem .8rem;font:600 .95rem var(--body);cursor:pointer}
+
+/* hero: the quote is the design */
+.hero{background:var(--forest);color:var(--white);padding:clamp(3rem,9vw,6.5rem) 0 clamp(3rem,8vw,5.5rem)}
+.hero h1{font-weight:500;margin-bottom:2rem}
+.hero h1 span{display:block;opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+.hero h1 .a{font-size:clamp(1.1rem,2.6vw,1.5rem);color:#b9d3cb}
+.hero h1 .b{font-size:clamp(1.6rem,4.6vw,2.7rem);margin:.35rem 0;animation-delay:.35s}
+.hero h1 .c{font-size:clamp(2.2rem,7.4vw,4.8rem);font-weight:700;color:var(--gold);animation-delay:.75s}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero p{max-width:34rem;font-size:1.15rem;color:#d7e6e1;margin-bottom:1.8rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.9rem}
+
+/* sections */
+section{padding:clamp(3rem,7vw,5rem) 0}
+.alt{background:var(--mist)}
+.lead{max-width:42rem;color:var(--muted)}
+.mission{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.facts{display:grid;gap:1.2rem}
+.facts div{border-left:4px solid var(--leaf);padding-left:1rem}
+.facts strong{display:block;font:700 2rem var(--head);color:var(--forest)}
+.facts span{color:var(--muted)}
+.who{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem;list-style:none;padding:0}
+.who li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem}
+
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.group{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--leaf);border-radius:8px;padding:1.5rem}
+.group:nth-child(2){border-top-color:var(--gold)}
+.group:nth-child(3){border-top-color:var(--forest)}
+.group p{color:var(--muted);font-size:.98rem;margin-bottom:.9rem}
+.group ul{padding-left:1.1rem}
+.group li{margin:.35rem 0}
+
+/* classes */
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.class{border:1px solid var(--line);border-radius:8px;padding:1.4rem;background:var(--white)}
+.class dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;margin:.8rem 0 1.1rem;font-size:.97rem}
+.class dt{color:var(--muted)}
+.class dd{font-weight:600}
+.empty{margin-top:2rem;border:2px dashed var(--line);border-radius:8px;padding:1.6rem;background:var(--white)}
+
+/* closing + footer */
+.close{background:var(--leaf);color:var(--white);text-align:center}
+.close p{max-width:34rem;margin:0 auto 1.6rem}
+footer{background:var(--ink);color:#c9d6d2;padding:3rem 0 2rem;font-size:.97rem}
+.cols{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:2.5rem}
+footer h3{color:var(--white);font-size:1.05rem}
+footer ul{list-style:none;padding:0}
+footer li{margin:.35rem 0}
+footer a{text-underline-offset:3px}
+.legal{margin-top:2rem;padding-top:1.2rem;border-top:1px solid #2c3d39;font-size:.9rem}
+
+
+/* interactive */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:50}
+header{transition:box-shadow .25s}
+header.scrolled{box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.btn{transition:background .2s,color .2s,transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.chip{font:600 .97rem var(--body);padding:.5rem 1.1rem;border-radius:999px;border:2px solid var(--leaf);background:var(--white);color:var(--forest);cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--white)}
+.group{transition:transform .3s,box-shadow .3s,opacity .25s}
+.group:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(15,61,58,.14)}
+.group.off{opacity:0;transform:scale(.95);pointer-events:none}
+.group li{transition:transform .2s,color .2s}
+.group li:hover{transform:translateX(6px);color:var(--leaf)}
+.who li{transition:background .2s,transform .2s,color .2s;cursor:default}
+.who li:hover{background:var(--forest);color:var(--white);transform:translateY(-2px)}
+.facts div{transition:border-color .3s,transform .3s}
+.facts div:hover{border-color:var(--gold);transform:translateX(6px)}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .group.reveal.in:hover{transform:translateY(-6px)}
+.js .group.reveal.off{opacity:0;transform:scale(.95);pointer-events:none;transition-delay:0ms!important}
+
+
+/* phone display */
+.fab{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:60}
+.fab-btn{display:flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);border:0;border-radius:999px;padding:.8rem 1.2rem;font:700 1rem var(--head);cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.28);animation:ring 2s ease-out 1.2s 3;transition:transform .15s}
+.fab-btn:hover{transform:translateY(-2px)}
+.fab-btn svg{width:20px;height:20px;fill:var(--ink)}
+@keyframes ring{0%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 0 rgba(232,184,74,.7)}100%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 20px rgba(232,184,74,0)}}
+.fab-pop{position:absolute;right:0;bottom:calc(100% + .7rem);width:min(310px,calc(100vw - 2rem));background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:1.1rem;box-shadow:0 16px 36px rgba(0,0,0,.25);opacity:0;transform:translateY(10px) scale(.97);transform-origin:100% 100%;pointer-events:none;transition:opacity .2s,transform .2s}
+.fab.open .fab-pop{opacity:1;transform:none;pointer-events:auto}
+.fab-pop h2{font-size:1.1rem;margin-bottom:.2rem}
+.fab-pop p{font-size:.92rem;color:var(--muted);margin-bottom:.8rem}
+.numrow{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.numrow a{flex:1;text-align:center;background:var(--forest);color:var(--white);text-decoration:none;font:700 1.02rem var(--head);padding:.65rem .5rem;border-radius:8px;transition:background .2s}
+.numrow a:hover{background:var(--leaf)}
+.numrow button{font:600 .9rem var(--body);padding:.6rem .8rem;border:2px solid var(--leaf);background:var(--white);color:var(--forest);border-radius:8px;cursor:pointer;min-width:4.6rem}
+.numrow button.ok{background:var(--leaf);color:var(--white)}
+@media (max-width:520px){.fab-btn span{display:none}.fab-btn{padding:.9rem}}
+@media (prefers-reduced-motion:reduce){.fab-btn{animation:none}.fab-pop,.fab-btn{transition:none}}
+
+@media (max-width:820px){
+  .menu{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:68px;background:var(--forest);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav ul.open{display:flex}
+  nav a{display:block;padding:.8rem 0}
+  .mission,.groups,.cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 span{animation:none;opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.chip,.group,.group li,.who li,.facts div{transition:none}
+  .btn:hover,.chip:hover,.group:hover,.group li:hover,.who li:hover,.facts div:hover{transform:none}
+}
+
+/* classes page */
+.pagehead{background:var(--forest);color:var(--white);padding:clamp(3rem,8vw,5.5rem) 0}
+.pagehead h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:700;margin-bottom:1rem}
+.pagehead p{max-width:36rem;font-size:1.2rem;color:#d7e6e1}
+.fbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
+.fbar .filters{margin-top:0}
+.count{color:var(--muted);font-size:.98rem}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;margin-top:2rem}
+.pcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .3s,box-shadow .3s,opacity .25s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(15,61,58,.15)}
+.pcard[hidden]{display:none}
+.pimg{overflow:hidden;aspect-ratio:16/10;background:var(--mist)}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pcard:hover .pimg img{transform:scale(1.07)}
+.pbody{display:flex;flex-direction:column;flex:1;padding:1.4rem}
+.tags2{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem}
+.tags2 span{background:var(--mist);border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;font-size:.85rem;color:var(--forest)}
+.pbody .sub{font-weight:600;color:var(--leaf);margin-bottom:.6rem}
+.pbody p{color:var(--muted);margin-bottom:1rem}
+.pbody .sub,.pbody .tags2{color:inherit}
+.pbody .sub{color:var(--leaf)}
+.pbody .btn{align-self:flex-start;margin-top:auto}
+.js .pcard.reveal.off,.pcard.off{opacity:0;transform:scale(.95);pointer-events:none;transition-delay:0ms!important}
+.js .pcard.reveal.in:hover{transform:translateY(-6px)}
+@media (prefers-reduced-motion:reduce){
+  .pcard,.pimg img{transition:none}
+  .pcard:hover,.js .pcard.reveal.in:hover{transform:none}
+  .pcard:hover .pimg img{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="images/Englintend.png" alt="" width="44" height="44"><span>Insight Mission</span></a>
+    <button class="menu" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <nav aria-label="Main">
+      <ul id="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/founder">Our founder</a></li>
+        <li><a href="/classes" aria-current="page">Classes</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="pagehead">
+    <div class="wrap">
+      <h1>Our classes</h1>
+      <p>Programs for teenagers, parents and teachers. Pick a topic to see what fits.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="fbar">
+        <div class="filters" role="group" aria-label="Filter classes">
+          <button class="chip" data-f="all" aria-pressed="true">All classes</button>
+          <button class="chip" data-f="career" aria-pressed="false">Career guidance</button>
+          <button class="chip" data-f="life" aria-pressed="false">Life skills</button>
+          <button class="chip" data-f="mentoring" aria-pressed="false">Mentoring</button>
+        </div>
+        <p class="count" id="count" aria-live="polite">Showing 5 of 5 classes</p>
+      </div>
+      <div class="pgrid" id="pgrid">
+        <article class="pcard" data-cat="life career">
+          <div class="pimg"><img src="Gallery/21.jpeg" alt="ROOTS & WINGS program session" width="800" height="520" loading="lazy"></div>
+          <div class="pbody">
+            <p class="tags2"><span>Life Skills</span><span>Career</span></p>
+            <h3>ROOTS &amp; WINGS</h3>
+            <p class="sub">Teen personality and life skill development</p>
+            <p>A program designed to inspire teenagers by building self-awareness, emotional intelligence, study habits, career development skills, digital citizenship and life leadership.</p>
+            <a class="btn solid" href="/contact">Learn more</a>
+          </div>
+        </article>
+        <article class="pcard" data-cat="life mentoring">
+          <div class="pimg"><img src="Gallery/76.jpeg" alt="SHE-POWER program session" width="800" height="520" loading="lazy"></div>
+          <div class="pbody">
+            <p class="tags2"><span>Life Skills</span><span>Mentoring</span></p>
+            <h3>SHE-POWER</h3>
+            <p class="sub">Empowerment program for teen girls</p>
+            <p>A confidence-building program that helps girls build self-assertiveness, strengthen resilience, grow social awareness and develop leadership skills.</p>
+            <a class="btn solid" href="/contact">Learn more</a>
+          </div>
+        </article>
+        <article class="pcard" data-cat="career">
+          <div class="pimg"><img src="Gallery/33.jpeg" alt="Career guidance session with parents" width="800" height="520" loading="lazy"></div>
+          <div class="pbody">
+            <p class="tags2"><span>Career Guidance</span></p>
+            <h3>Career Guidance with Parents</h3>
+            <p class="sub">Choose the next step together</p>
+            <p>Sessions that help students understand their strengths, make informed career decisions and build confidence for what comes next.</p>
+            <a class="btn solid" href="/contact">Learn more</a>
+          </div>
+        </article>
+        <article class="pcard" data-cat="mentoring">
+          <div class="pimg"><img src="Gallery/61.jpeg" alt="Parenting guidance session" width="800" height="520" loading="lazy"></div>
+          <div class="pbody">
+            <p class="tags2"><span>Mentoring</span></p>
+            <h3>Parenting Guidance Program</h3>
+            <p class="sub">Happy parent. Happy child.</p>
+            <p>Age-specific parenting sessions that help parents support children through each stage, from early childhood to senior school.</p>
+            <a class="btn solid" href="/contact">Learn more</a>
+          </div>
+        </article>
+        <article class="pcard" data-cat="mentoring life">
+          <div class="pimg"><img src="Gallery/31.jpeg" alt="Teachers development workshop" width="800" height="520" loading="lazy"></div>
+          <div class="pbody">
+            <p class="tags2"><span>Mentoring</span><span>Life Skills</span></p>
+            <h3>Teachers Development Program</h3>
+            <p class="sub">Train your teachers. Transform your school.</p>
+            <p>Workshops for educators on emotional intelligence, classroom effectiveness, and personal and professional development.</p>
+            <a class="btn solid" href="/contact">Learn more</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2>Not sure which class fits?</h2>
+      <p>Tell us who it is for and what you hope will change. We will suggest the right program.</p>
+      <a class="btn solid" href="/contact">Get in touch</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap cols">
+    <div>
+      <h3>Insight Mission</h3>
+      <p>Personal Guidance and Life Enrichment Centre. Training, mentoring and guidance for students, families, teachers and organisations in Kerala.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="/about">About us</a></li><li><a href="/founder">Our founder</a></li>
+        <li><a href="/classes">Classes</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+919656144712">+91 96561 44712</a></li>
+        <li><a href="tel:+919847400712">+91 98474 00712</a></li>
+        <li><a href="mailto:insightmission@gmail.com">insightmission@gmail.com</a></li>
+        <li><a href="mailto:sunil_kuruvilla@rediffmail.com">sunil_kuruvilla@rediffmail.com</a></li>
+      </ul>
+      <h3 style="margin-top:1.2rem">Follow</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/konnayilavenue" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/sunil__kuruvilla" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/sunil-d-kuruvilla-207b8443/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@sunilkuruvilla" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">&copy; 2026 Insight Mission. All rights reserved.</div>
+</footer>
+<div class="fab" id="fab">
+  <div class="fab-pop" id="fab-pop" role="dialog" aria-label="Phone numbers">
+    <h2>Call Insight Mission</h2>
+    <p>Tap a number to call, or copy it.</p>
+    <div class="numrow"><a href="tel:+919656144712">+91 96561 44712</a><button type="button" data-copy="+91 96561 44712">Copy</button></div>
+    <div class="numrow"><a href="tel:+919847400712">+91 98474 00712</a><button type="button" data-copy="+91 98474 00712">Copy</button></div>
+  </div>
+  <button class="fab-btn" id="fab-btn" aria-expanded="false" aria-controls="fab-pop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>Call us</span></button>
+</div>
+
+<script>
+var btn=document.querySelector('.menu'),list=document.getElementById('nav-list');
+btn.addEventListener('click',function(){var o=list.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js');
+var bar=document.getElementById('progress'),head=document.querySelector('header');
+function onScroll(){var h=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.transform='scaleX('+(h>0?window.scrollY/h:0)+')';head.classList.toggle('scrolled',window.scrollY>10);}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// Reveal on scroll
+var cards=[].slice.call(document.querySelectorAll('.pcard')),items=cards.concat([].slice.call(document.querySelectorAll('.close .wrap')));
+items.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=(i%3)*90+'ms';});
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  items.forEach(function(el){io.observe(el);});
+}else{items.forEach(function(el){el.classList.add('in');});}
+
+// Filter
+var chips=document.querySelectorAll('.chip'),countEl=document.getElementById('count');
+chips.forEach(function(chip){chip.addEventListener('click',function(){
+  chips.forEach(function(c){c.setAttribute('aria-pressed',c===chip);});
+  var f=chip.dataset.f,n=0;
+  cards.forEach(function(c){
+    var show=f==='all'||c.dataset.cat.split(' ').indexOf(f)>-1;
+    if(show){n++;c.hidden=false;c.classList.add('in');requestAnimationFrame(function(){c.classList.remove('off');});}
+    else{c.classList.add('off');setTimeout(function(){if(c.classList.contains('off'))c.hidden=true;},reduce?0:260);}
+  });
+  countEl.textContent='Showing '+n+' of '+cards.length+' classes';
+});});
+(function(){
+  var fab=document.getElementById('fab'),b=document.getElementById('fab-btn');
+  function set(o){fab.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!fab.classList.contains('open'));});
+  document.addEventListener('click',function(e){if(!fab.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false);b.focus();}});
+  [].forEach.call(fab.querySelectorAll('[data-copy]'),function(c){
+    c.addEventListener('click',function(){
+      var t=c.dataset.copy;
+      function done(){c.textContent='Copied';c.classList.add('ok');setTimeout(function(){c.textContent='Copy';c.classList.remove('ok');},1600);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){});}
+      else{var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');done();}catch(_){}document.body.removeChild(x);}
+    });
+  });
+})();
+</script>
+</body>
+</html>
