@@ -1,1260 +1,406 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/png" href="images/image.png">
-    <title>Insight Mission</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="contact.css">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Insight Mission",
-  "url": "https://insightmission.org.in",
-  "logo": "https://insightmission.org.in/images/image.png",
-  "founder": {
-    "@type": "Person",
-    "name": "Sunil Kuruvila"
-  }
+<link rel="icon" type="image/png" href="images/Englintend.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insight Mission | Personal Guidance & Life Enrichment Centre, Kerala</title>
+<meta name="description" content="Insight Mission offers student training, career guidance, parenting and family counselling, and leadership and staff training across Kerala By Sunil Kuruvilla.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0f3d3a; --leaf:#2f7d5b; --gold:#e8b84a; --mist:#eef4f1; --ink:#14211f; --white:#fff;
+  --muted:#4a5c58; --line:#cfdcd7;
+  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
 }
-</script>
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.65 var(--body);color:var(--ink);background:var(--white)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:99}
+.skip:focus{left:0}
+h1,h2,h3{font-family:var(--head);line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:1rem}
+h3{font-size:1.2rem;margin-bottom:.6rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:6px;font:700 1rem var(--head);text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:#f3cb6d}
+.btn.ghost{color:var(--white)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+/* header */
+header{background:var(--forest);color:var(--white);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;font:700 1.25rem var(--head);text-decoration:none}
+.brand img{height:44px;width:auto;border-radius:6px}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav a{text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--gold)}
+.menu{display:none;background:none;border:2px solid var(--white);color:var(--white);border-radius:6px;padding:.45rem .8rem;font:600 .95rem var(--body);cursor:pointer}
+
+/* hero: the quote is the design */
+.hero{background:var(--forest);color:var(--white);padding:clamp(3rem,9vw,6.5rem) 0 clamp(3rem,8vw,5.5rem)}
+.hero h1{font-weight:500;margin-bottom:2rem}
+.hero h1 span{display:block;opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+.hero h1 .a{font-size:clamp(1.1rem,2.6vw,1.5rem);color:#b9d3cb}
+.hero h1 .b{font-size:clamp(1.6rem,4.6vw,2.7rem);margin:.35rem 0;animation-delay:.35s}
+.hero h1 .c{font-size:clamp(2.2rem,7.4vw,4.8rem);font-weight:700;color:var(--gold);animation-delay:.75s}
+@keyframes rise{to{opacity:1;transform:none}}
+.hero p{max-width:34rem;font-size:1.15rem;color:#d7e6e1;margin-bottom:1.8rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.9rem}
+
+/* sections */
+section{padding:clamp(3rem,7vw,5rem) 0}
+.alt{background:var(--mist)}
+.lead{max-width:42rem;color:var(--muted)}
+.mission{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.facts{display:grid;gap:1.2rem}
+.facts div{border-left:4px solid var(--leaf);padding-left:1rem}
+.facts strong{display:block;font:700 2rem var(--head);color:var(--forest)}
+.facts span{color:var(--muted)}
+.who{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem;list-style:none;padding:0}
+.who li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:.45rem 1.1rem}
+
+.groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.group{background:var(--white);border:1px solid var(--line);border-top:5px solid var(--leaf);border-radius:8px;padding:1.5rem}
+.group:nth-child(2){border-top-color:var(--gold)}
+.group:nth-child(3){border-top-color:var(--forest)}
+.group p{color:var(--muted);font-size:.98rem;margin-bottom:.9rem}
+.group ul{padding-left:1.1rem}
+.group li{margin:.35rem 0}
+
+/* classes */
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+.class{border:1px solid var(--line);border-radius:8px;padding:1.4rem;background:var(--white)}
+.class dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .8rem;margin:.8rem 0 1.1rem;font-size:.97rem}
+.class dt{color:var(--muted)}
+.class dd{font-weight:600}
+.empty{margin-top:2rem;border:2px dashed var(--line);border-radius:8px;padding:1.6rem;background:var(--white)}
+
+/* closing + footer */
+.close{background:var(--leaf);color:var(--white);text-align:center}
+.close p{max-width:34rem;margin:0 auto 1.6rem}
+footer{background:var(--ink);color:#c9d6d2;padding:3rem 0 2rem;font-size:.97rem}
+.cols{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:2.5rem}
+footer h3{color:var(--white);font-size:1.05rem}
+footer ul{list-style:none;padding:0}
+footer li{margin:.35rem 0}
+footer a{text-underline-offset:3px}
+.legal{margin-top:2rem;padding-top:1.2rem;border-top:1px solid #2c3d39;font-size:.9rem}
 
 
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #3b82f6;
-            --text-color: #1f2937;
-            --light-bg: #f3f4f6;
-            --card-bg: #ffffff;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --transition-speed: 0.3s;
-        }
+/* interactive */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:50}
+header{transition:box-shadow .25s}
+header.scrolled{box-shadow:0 4px 18px rgba(0,0,0,.25)}
+.btn{transition:background .2s,color .2s,transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.chip{font:600 .97rem var(--body);padding:.5rem 1.1rem;border-radius:999px;border:2px solid var(--leaf);background:var(--white);color:var(--forest);cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--white)}
+.group{transition:transform .3s,box-shadow .3s,opacity .25s}
+.group:hover{transform:translateY(-6px);box-shadow:0 14px 28px rgba(15,61,58,.14)}
+.group.off{opacity:0;transform:scale(.95);pointer-events:none}
+.group li{transition:transform .2s,color .2s}
+.group li:hover{transform:translateX(6px);color:var(--leaf)}
+.who li{transition:background .2s,transform .2s,color .2s;cursor:default}
+.who li:hover{background:var(--forest);color:var(--white);transform:translateY(-2px)}
+.facts div{transition:border-color .3s,transform .3s}
+.facts div:hover{border-color:var(--gold);transform:translateX(6px)}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .group.reveal.in:hover{transform:translateY(-6px)}
+.js .group.reveal.off{opacity:0;transform:scale(.95);pointer-events:none;transition-delay:0ms!important}
 
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
+/* phone display */
+.fab{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:60}
+.fab-btn{display:flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);border:0;border-radius:999px;padding:.8rem 1.2rem;font:700 1rem var(--head);cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.28);animation:ring 2s ease-out 1.2s 3;transition:transform .15s}
+.fab-btn:hover{transform:translateY(-2px)}
+.fab-btn svg{width:20px;height:20px;fill:var(--ink)}
+@keyframes ring{0%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 0 rgba(232,184,74,.7)}100%{box-shadow:0 8px 22px rgba(0,0,0,.28),0 0 0 20px rgba(232,184,74,0)}}
+.fab-pop{position:absolute;right:0;bottom:calc(100% + .7rem);width:min(310px,calc(100vw - 2rem));background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:1.1rem;box-shadow:0 16px 36px rgba(0,0,0,.25);opacity:0;transform:translateY(10px) scale(.97);transform-origin:100% 100%;pointer-events:none;transition:opacity .2s,transform .2s}
+.fab.open .fab-pop{opacity:1;transform:none;pointer-events:auto}
+.fab-pop h2{font-size:1.1rem;margin-bottom:.2rem}
+.fab-pop p{font-size:.92rem;color:var(--muted);margin-bottom:.8rem}
+.numrow{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+.numrow a{flex:1;text-align:center;background:var(--forest);color:var(--white);text-decoration:none;font:700 1.02rem var(--head);padding:.65rem .5rem;border-radius:8px;transition:background .2s}
+.numrow a:hover{background:var(--leaf)}
+.numrow button{font:600 .9rem var(--body);padding:.6rem .8rem;border:2px solid var(--leaf);background:var(--white);color:var(--forest);border-radius:8px;cursor:pointer;min-width:4.6rem}
+.numrow button.ok{background:var(--leaf);color:var(--white)}
+@media (max-width:520px){.fab-btn span{display:none}.fab-btn{padding:.9rem}}
+@media (prefers-reduced-motion:reduce){.fab-btn{animation:none}.fab-pop,.fab-btn{transition:none}}
 
-        .featured-class-section {
-            padding: 4rem 0;
-            background: #f8fafc;
-            text-align: center;
-        }
-
-        .featured-class-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .featured-class-info {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 2.5rem;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .featured-class-info img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .featured-class-info .class-details {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .featured-class-info h3 {
-            color: var(--text-color);
-            font-size: 1.5rem;
-            text-align: left;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .featured-class-info .title-description {
-            color: #4b5563;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            text-align: left;
-            margin-bottom: 2.5rem;
-        }
-
-        .featured-class-info .course-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .featured-class-info .info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #4b5563;
-            font-size: 0.9rem;
-            flex: 1 1 45%;
-        }
-
-        .featured-class-info .info-item i {
-            color: #2563eb;
-            font-size: 1.2rem;
-        }
-
-        .featured-class-info .fee {
-            font-weight: 600;
-            color: #2563eb;
-        }
-
-        /* Register button below content */
-        .featured-class-info .register-btn {
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            max-width: 200px;
-            padding: 0.8rem 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            margin-top: 2rem;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .featured-class-info .register-btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .featured-class-info .register-btn i {
-            font-size: 1rem;
-            margin-right: 0.3rem;
-            transition: transform var(--transition-speed) ease;
-        }
-
-        .featured-class-info .register-btn:hover i {
-            transform: translateX(2px);
-        }
-
-        /* Loading State Styles */
-        .loading-state {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .loading-image {
-            width: 100%;
-            height: 250px;
-            background: var(--light-bg);
-        }
-
-        .loading-info {
-            padding: 1.5rem;
-        }
-
-        .loading-title,
-        .loading-description,
-        .loading-item,
-        .loading-button {
-            background: var(--light-bg);
-            border-radius: 8px;
-            animation: shimmer 1.5s infinite;
-        }
-
-        .loading-title {
-            height: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .loading-description {
-            width: 50%;
-            height: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .loading-course-info {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .loading-item {
-            flex: 1 1 45%;
-            height: 1.2rem;
-        }
-
-        .loading-button {
-            width: 200px;
-            height: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .featured-class-container {
-                padding: 0 0.5rem;
-            }
-
-            .featured-class-info {
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .featured-class-info img {
-                height: 200px;
-            }
-
-            .featured-class-info .class-details {
-                padding: 1.5rem;
-                gap: 1.5rem;
-            }
-
-            .featured-class-info h3 {
-                font-size: 1.3rem;
-            }
-
-            .featured-class-info .title-description {
-                font-size: 0.85rem;
-                line-height: 1.5;
-                margin-bottom: 2rem;
-            }
-
-            .featured-class-info .course-info {
-                padding-top: 1rem;
-                border-top: 1px solid #e5e7eb;
-            }
-
-            .featured-class-info .info-item {
-                flex: 1 1 100%;
-            }
-
-            .featured-class-cta {
-                width: 100%;
-                margin: 0.5rem 0;
-            }
-        }
-
-        /* Button styles */
-        .cta-button,
-        .view-all-btn,
-        .register-btn,
-        .learn-more-btn,
-        .contact-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            position: relative;
-            overflow: hidden;
-            margin: 1rem 0;
-            width: 100%;
-            max-width: 200px;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button::after,
-        .view-all-btn::after,
-        .register-btn::after,
-        .learn-more-btn::after,
-        .contact-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: scale(0);
-            transition: transform var(--transition-speed) ease;
-        }
-
-        .cta-button:hover::after,
-        .view-all-btn:hover::after,
-        .register-btn:hover::after,
-        .learn-more-btn:hover::after,
-        .contact-btn:hover::after {
-            transform: scale(1);
-        }
-
-        .cta-button i,
-        .view-all-btn i,
-        .register-btn i,
-        .learn-more-btn i,
-        .contact-btn i {
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
-
-        /* Featured class button */
-        .featured-class-cta {
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            max-width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            position: relative;
-            overflow: hidden;
-            margin: 1rem auto;
-            display: block;
-        }
-
-        .featured-class-cta:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .featured-class-cta i {
-            font-size: 1rem;
-            transition: transform var(--transition-speed) ease;
-        }
-
-        .featured-class-cta:hover i {
-            transform: translateX(2px);
-        }
-
-        /* View All button in classes section */
-        .view-all-container {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        /* Contact button in contact section */
-        .contact-btn {
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            max-width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            position: relative;
-            overflow: hidden;
-            margin: 1rem auto;
-            display: block;
-        }
-
-        .contact-btn:hover {
-            background: var(--primary-color-dark);
-            transform: translateY(-2px);
-        }
-
-        .collaboration-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+@media (max-width:820px){
+  .menu{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:68px;background:var(--forest);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav ul.open{display:flex}
+  nav a{display:block;padding:.8rem 0}
+  .mission,.groups,.cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 span{animation:none;opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.chip,.group,.group li,.who li,.facts div{transition:none}
+  .btn:hover,.chip:hover,.group:hover,.group li:hover,.who li:hover,.facts div:hover{transform:none}
+}
+</style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="/" class="logo">Insight Mission</a>
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="about">About Us</a>
-            <a href="founder">Our Founder</a>
-            <a href="classes">Classes</a>
-            <a href="gallery">Gallery</a>
-            <a href="contact">Contact</a>
-        </div>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
-        </div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="images/Englintend.png" alt="" width="44" height="44"><span>Insight Mission</span></a>
+    <button class="menu" aria-expanded="false" aria-controls="nav-list">Menu</button>
+    <nav aria-label="Main">
+      <ul id="nav-list">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/founder">Our founder</a></li>
+        <li><a href="/classes">Classes</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <script>
-        // Mobile Navigation Toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            const dropdownToggle = document.querySelector('.dropdown-toggle');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-
-            // Hamburger menu toggle
-            hamburger.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                this.classList.toggle('active');
-            });
-
-            // Dropdown toggle in mobile view
-            if (dropdownToggle && dropdownMenu) {
-                dropdownToggle.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    dropdownMenu.classList.toggle('show');
-                    this.classList.toggle('active');
-                });
-            }
-
-            // Close mobile menu when a link is clicked
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
-                    
-                    // Close dropdown if open
-                    if (dropdownMenu) {
-                        dropdownMenu.classList.remove('show');
-                        dropdownToggle.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Transform Your Future Through Education & Mentorship</h1>
-                <div class="quote-box">
-                    <p class="quote-line">"If you are planning for a year, sow rice.<br>If you are planning for a decade, plant trees.<br>If you are planning for a lifetime, educate people."</p>
-                </div>
-                <div class="hero-cta">
-                    <a href="classes" class="cta-button primary">
-                        <i class="fas fa-graduation-cap"></i>
-                        Explore Programs
-                    </a>
-                    <a href="contact" class="cta-button secondary">
-                        <i class="fas fa-envelope"></i>
-                        Get in Touch
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/Englintend.png" alt="Insight Mission">
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Statement Section -->
-    <section class="mission-section">
-        <div class="mission-card">
-            <div class="mission-content">
-                <h2>Our Mission</h2>
-                <p>Our core mission is the holistic development of young people. We believe in nurturing their potential, guiding them towards the right career paths, and supporting them in leading purposeful lives. To achieve this, we engage in continuous research, design innovative solutions to youth-related challenges, and partner with various institutions to deliver high-impact programs.
-This mission is led by a dedicated team under the guidance of <strong>Mr Sunil Kuruvila</strong>, whose vision has been instrumental in shaping our approach and impact.</p>
-            </div>
-            <div class="mission-stats">
-                <div class="stat-item">
-                    <h3>4000+</h3>
-                    <p>Programs</p>
-                </div>
-                <div class="stat-item">
-                    <h3>10,000+</h3>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Success Rate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Collaborations Section -->
-    <section class="mission-section">
-        <div class="mission-card">
-            <div class="mission-content">
-                <h2>Our Collaborations</h2>
-                <p>We believe in the power of partnerships to create meaningful change. By working closely with a wide range of institutions and organizations, we ensure our programs reach diverse communities and make a lasting impact. Our collaborations foster mutual growth, enable knowledge sharing, and help us empower individuals through education, mentorship, and community engagement.</p>
-            </div>
-            <div class="mission-stats">
-                <div class="stat-item">
-                    <i class="fas fa-school collaboration-icon"></i>
-                    <p>Schools</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-university collaboration-icon"></i>
-                    <p>Colleges and Universities</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users collaboration-icon"></i>
-                    <p>Youth Organisations</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-handshake collaboration-icon"></i>
-                    <p>Political and Social Organisations</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Programs -->
-    <section class="mission-section">
-        <div class="mission-card">
-            <div class="mission-content">
-                <h2>Our Key Programs</h2>
-                <p>Our programs are thoughtfully designed to support individuals at every stage of their personal, academic, and professional journey. From empowering students and guiding parents to equipping educators, leaders, and professionals, each initiative is tailored to meet real-world needs. Whether it's skill development, leadership training, or career growth, our sessions blend practical insights with inspiring mentorship to unlock true potential and drive lasting transformation.</p>
-            </div>
-            <div class="mission-stats">
-                <div class="stat-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <p>Student Training Programs</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-briefcase"></i>
-                    <p>Career Guidance & Development</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <p>Teacher & Faculty Development Workshops</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <p>Parenting Guidance Sessions</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-crown"></i>
-                    <p>Leadership Enhancement Programs</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-users-cog"></i>
-                    <p>Staff Training Programs</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-chart-line"></i>
-                    <p>Management Development Training</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p>Marketing, Sales & Retail Training</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-heart"></i>
-                    <p>Couple Guidance</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-home"></i>
-                    <p>Family Guidance</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-hands-helping"></i>
-                    <p>Life Guidance</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-tools"></i>
-                    <p>Skill Development Workshops</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Class Section -->
-    <section class="featured-class-section">
-        <div class="featured-class-container">
-            <div class="featured-class-info">
-                <!-- Loading state -->
-                <div class="loading-state">
-                    <div class="loading-image"></div>
-                    <div class="loading-info">
-                        <div class="loading-title"></div>
-                        <div class="loading-description"></div>
-                        <div class="loading-course-info">
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                            <div class="loading-item"></div>
-                        </div>
-                        <div class="loading-button"></div>
-                    </div>
-                </div>
-                <div class="content-wrapper">
-                    <h3>Class Title</h3>
-                    <p class="title-description">Class description goes here</p>
-                    <div class="course-info">
-                        <div class="info-item">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Start Date</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Time</span>
-                        </div>
-                        <div class="info-item fee">
-                            <i class="fas fa-rupee-sign"></i>
-                            <span>Fee</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="register.html" class="register-btn" onclick="storeCourseDetails('${upcomingClass.title}', '${upcomingClass.date}', '${formattedTime}', '${upcomingClass.fee}')">
-                    <i class="fas fa-calendar-alt"></i>
-                    Register Now
-                </a>
-            </div>
-            <a href="classes.html" class="cta-button primary featured-class-cta">
-                <i class="fas fa-calendar-alt"></i>
-                View All Classes
-            </a>
-        </div>
-    </section>
-
-    <script>
-        // Wait for Supabase client to be ready
-        // Removed Supabase client ready check as we're using static data
-
-        // Insight Mission Flagship Programs
-        const classesData = [
-            {
-                title: "ROOTS & WINGS - Teen Personality & Life Skill Development",
-                description: "A transformative program designed to inspire teenagers by enhancing self-awareness, emotional intelligence, study habits, career development skills, digital citizenship, and life leadership.",
-                image_url: "Gallery/21.jpeg"
-            }
-        ];
-
-        // Load featured class
-        function loadFeaturedClass() {
-            // Use the first class in our static data as the featured class
-            const upcomingClass = classesData[0];
-           try{ 
-            if (upcomingClass) {
-                const featuredClassElement = document.querySelector('.featured-class-info');
-                if (featuredClassElement) {
-                    featuredClassElement.innerHTML = `
-                        <img src="${upcomingClass.image_url}" alt="${upcomingClass.title}">
-                        <div class="class-details">
-                            <h3>${upcomingClass.title}</h3>
-                            <p class="title-description">${upcomingClass.description}</p>
-                            <a href="contact.html" class="register-btn" onclick="storeCourseDetails('${upcomingClass.title}')">
-                                <i class="fas fa-calendar-alt"></i>
-                                Learn More
-                            </a>
-                        `;
-                    }
-                }
-            } catch (error) {
-                console.error('Error loading featured classes:', error);
-            } finally {
-                // Ensure something happens even if there's an error
-                renderUpcomingClasses();
-            }
-        }
-
-        // Function to store course details in localStorage
-        window.storeCourseDetails = function(title) {
-            localStorage.setItem('selectedCourseName', title);
-        };
-
-        // Load featured class when page loads
-        document.addEventListener('DOMContentLoaded', loadFeaturedClass);
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Hamburger Menu Toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Dropdown Toggle
-        // Dropdown toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdownToggle = document.querySelector('.dropdown-toggle');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-
-            dropdownToggle.addEventListener('click', function() {
-                dropdownMenu.classList.toggle('show');
-                dropdownToggle.classList.toggle('active');
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                    dropdownMenu.classList.remove('show');
-                    dropdownToggle.classList.remove('active');
-                }
-            });
-        });
-
-        // Navbar Scroll Effect
-        const navbar = document.querySelector('.navbar');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Hamburger menu functionality
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Close menu when pressing escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // Image Slider
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        // Auto slide every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Scroll Animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.class-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(card);
-        });
-
-        // Initialize page
-        async function initializePage() {
-            try {
-                await loadClassData();
-            } catch (error) {
-                console.error('Error initializing page:', error);
-            }
-        }
-
-        // Listen for storage changes from other windows/tabs
-        window.addEventListener('storage', async (event) => {
-            if (event.key === 'classesData') {
-                try {
-                    const newData = JSON.parse(event.newValue);
-                    classesData = newData;
-                    console.log('Data updated from storage event:', classesData);
-                    renderUpcomingClasses();
-                } catch (error) {
-                    console.error('Error handling storage event:', error);
-                }
-            }
-        });
-
-        // Listen for class data updates from other pages
-        window.addEventListener('classDataUpdated', (event) => {
-            classesData = event.detail.data;
-            console.log('Data updated from event:', classesData);
-            renderUpcomingClasses();
-        });
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initializePage);
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase.js"></script>
-
-
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-        <div class="section-container">
-            <h2>Ready to Transform Your Future?</h2>
-            <p>Join our community of learners and take the first step towards your success</p>
-            <div class="cta-buttons">
-                <a href="classes" class="cta-button primary">
-                    <i class="fas fa-graduation-cap"></i>
-                    View All Programs
-                </a>
-                <a href="contact" class="cta-button secondary">
-                    <i class="fas fa-envelope"></i>
-                    Get in Touch
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Empowering students through quality education and innovative learning experiences. Join us on the journey to academic excellence.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/konnayilavenue?mibextid=2JQ9oc"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/sunil__kuruvilla?igshid=OGQ5ZDc2ODk2ZA%3D%3D"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/sunil-d-kuruvilla-207b8443/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@sunilkuruvilla"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="/">Home</a>
-                    <a href="about">About</a>
-                    <a href="classes">Classes</a>
-                    <a href="gallery">Gallery</a>
-                    <a href="contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span onclick="window.open('https://maps.app.goo.gl/upsBj7XH281K8nv1A', '_blank')" style="cursor: pointer;">INSIGHT MISSION - Personal Guidance & Life Enrichment Centre, Kerala, India</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 96561 44712, +91 98474 00712</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>sunil_kuruvilla@rediffmail.com | insightmission@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Insight Mission. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- PiP Local Video - Commented out for later use -->
-    <!--
-    <div id="pip-video-container" class="pip-video-container">
-        <div id="pip-video-wrapper" class="pip-video-wrapper">
-            <video id="pip-video" width="280" height="160" poster="images/image.png" style="border-radius: 10px; width: 100%; height: 160px;" autoplay muted>
-                <source src="Videos/intro.mp4" type="video/mp4">
-                Your browser does not support video tag.
-            </video>
-            <div class="pip-video-controls">
-                <button id="pip-mute" class="pip-close-btn" title="Mute">
-                    <i id="pip-mute-icon" class="fas fa-volume-up"></i>
-                </button>
-                <button id="pip-close" class="pip-close-btn" title="Close PiP">
-                    <i class="fas fa-times"></i>
-                </button>
-                <button id="pip-youtube-channel" class="pip-youtube-channel-btn" style="display: none; margin-left: 8px;">
-                    <i class="fab fa-youtube"></i>
-                    <span class="btn-text">Go to YouTube Channel</span>
-                </button>
-            </div>
-        </div>
+<main id="main">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+      <h1>
+        <span class="a">If you are planning for a year, sow rice.</span>
+        <span class="b">If you are planning for a decade, plant trees.</span>
+        <span class="c">If you are planning for a lifetime, educate people.</span>
+      </h1>
+      <p>Insight Mission helps students, families, teachers and teams in Kerala grow through training, mentoring and honest guidance.</p>
+      <div class="cta">
+        <a class="btn solid" href="/classes">See our programs</a>
+        <a class="btn ghost" href="/contact">Talk to us</a>
+      </div>
+      </div>
     </div>
-    -->
+  </div>
 
-    <!-- PiP Video CSS - Commented out for later use -->
-    <!--
-    <style>
-        .pip-video-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+  <section id="mission">
+    <div class="wrap mission">
+      <div>
+        <h2>Our mission</h2>
+        <p class="lead">We help young people grow in every part of life. That means building their abilities, guiding them toward the right career, and supporting them to live with purpose.</p>
+        <p class="lead" style="margin-top:1rem">We research the challenges young people face, design practical solutions, and run programs with partner institutions. Our team works under the guidance of <strong>Mr Sunil Kuruvilla</strong>.</p>
+        <h3 style="margin-top:2rem">Who we work with</h3>
+        <ul class="who">
+          <li>Schools</li><li>Colleges and universities</li><li>Youth organisations</li><li>Social and political organisations</li>
+        </ul>
+      </div>
+      <div class="facts" aria-label="Insight Mission in numbers">
+        <div><strong data-count="4000" data-suffix="+">4000+</strong><span>programs delivered</span></div>
+        <div><strong data-count="10000" data-suffix="+">10,000+</strong><span>people trained and guided</span></div>
+        <div><strong data-count="12" data-suffix="">12</strong><span>program areas, from school to boardroom</span></div>
+      </div>
+    </div>
+  </section>
 
-        .pip-video-wrapper {
-            width: 280px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            overflow: hidden;
-            position: relative;
-        }
+  <section id="programs" class="alt">
+    <div class="wrap">
+      <h2>Programs for every stage of life</h2>
+      <p class="lead">Pick the group closest to you. Each program mixes practical skills with one-to-one mentoring.</p>
+      <div class="filters" role="group" aria-label="Filter programs">
+        <button class="chip" data-f="all" aria-pressed="true">All programs</button>
+        <button class="chip" data-f="students" aria-pressed="false">Students and youth</button>
+        <button class="chip" data-f="families" aria-pressed="false">Parents and families</button>
+        <button class="chip" data-f="orgs" aria-pressed="false">Educators and organisations</button>
+      </div>
+      <div class="groups">
+        <article class="group" data-g="students">
+          <h3>Students and youth</h3>
+          <p>Build skills, confidence and a clear direction.</p>
+          <ul><li>Student training programs</li><li>Career guidance and development</li><li>Skill development workshops</li></ul>
+        </article>
+        <article class="group" data-g="families">
+          <h3>Parents and families</h3>
+          <p>Support at home, in relationships and in life decisions.</p>
+          <ul><li>Parenting guidance sessions</li><li>Couple guidance</li><li>Family guidance</li><li>Life guidance</li></ul>
+        </article>
+        <article class="group" data-g="orgs">
+          <h3>Educators and organisations</h3>
+          <p>Train the people who lead, teach and serve.</p>
+          <ul><li>Teacher and faculty development workshops</li><li>Leadership enhancement programs</li><li>Staff training programs</li><li>Management development training</li><li>Marketing, sales and retail training</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        .pip-video-wrapper iframe {
-            width: 100%;
-            height: 160px;
-            border: none;
-        }
+  <section id="classes">
+    <div class="wrap">
+      <h2>Upcoming classes</h2>
+      <div id="class-list" class="classes"></div>
+      <div id="class-empty" class="empty" hidden>
+        <h3>No classes are scheduled right now</h3>
+        <p>Call or message us and we will tell you when the next batch starts.</p>
+        <p style="margin-top:1rem"><a class="btn solid" href="/contact">Ask about the next batch</a></p>
+      </div>
+    </div>
+  </section>
 
-        .pip-video-controls {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 10px;
-        }
+  <section class="close">
+    <div class="wrap">
+      <h2>Ready to take the first step?</h2>
+      <p>Tell us who the program is for and what you hope will change. We will suggest the right fit.</p>
+      <a class="btn solid" href="/contact">Get in touch</a>
+    </div>
+  </section>
+</main>
 
-        .pip-toggle-btn, 
-        .pip-close-btn {
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
+<footer>
+  <div class="wrap cols">
+    <div>
+      <h3>Insight Mission</h3>
+      <p>Personal Guidance and Life Enrichment Centre. Training, mentoring and guidance for students, families, teachers and organisations in Kerala.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="/about">About us</a></li><li><a href="/founder">Our founder</a></li>
+        <li><a href="/classes">Classes</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+919656144712">+91 96561 44712</a></li>
+        <li><a href="tel:+919847400712">+91 98474 00712</a></li>
+        <li><a href="mailto:insightmission@gmail.com">insightmission@gmail.com</a></li>
+        <li><a href="mailto:sunil_kuruvilla@rediffmail.com">sunil_kuruvilla@rediffmail.com</a></li>
+      </ul>
+      <h3 style="margin-top:1.2rem">Follow</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/konnayilavenue" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/sunil__kuruvilla" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/sunil-d-kuruvilla-207b8443/" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@sunilkuruvilla" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">&copy; 2026 Insight Mission. All rights reserved.</div>
+</footer>
 
-        .pip-youtube-channel-btn {
-            background: #ff0000;
-            color: #fff;
-            border: none;
-            border-radius: 30px;
-            min-width: 36px;
-            height: 36px;
-            padding: 0 9px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            white-space: nowrap;
-            vertical-align: middle;
-            position: relative;
-            line-height: 1;
-        }
-        .pip-youtube-channel-btn i.fab.fa-youtube {
-            font-size: 18px;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-            flex-shrink: 0;
-        }
-        .pip-youtube-channel-btn:hover {
-            background: #d60000;
-        }
-        .pip-close-btn {
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
 
-        .pip-toggle-btn:hover, 
-        .pip-close-btn:hover {
-            background: rgba(0,0,0,0.7);
-        }
+<div class="fab" id="fab">
+  <div class="fab-pop" id="fab-pop" role="dialog" aria-label="Phone numbers">
+    <h2>Call Insight Mission</h2>
+    <p>Tap a number to call, or copy it.</p>
+    <div class="numrow"><a href="tel:+919656144712">+91 96561 44712</a><button type="button" data-copy="+91 96561 44712">Copy</button></div>
+    <div class="numrow"><a href="tel:+919847400712">+91 98474 00712</a><button type="button" data-copy="+91 98474 00712">Copy</button></div>
+  </div>
+  <button class="fab-btn" id="fab-btn" aria-expanded="false" aria-controls="fab-pop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>Call us</span></button>
+</div>
+<script>
+// Mobile menu
+var btn = document.querySelector('.menu'), list = document.getElementById('nav-list');
+btn.addEventListener('click', function () {
+  var open = list.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+});
 
-        .pip-youtube-channel-btn {
-            background: #FF0000;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 5px 10px;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            font-size: 10px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+// Classes: add real classes here. Leave the array empty to show the "no classes" message.
+var classes = [
+  // { title: "Career Guidance for Class 12", description: "Choose a stream and plan your next five years.",
+  //   start: "5 Jan 2027", time: "10:00 AM", fee: "₹1,500", link: "/register" }
+];
+var listEl = document.getElementById('class-list'), emptyEl = document.getElementById('class-empty');
+function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+if (classes.length === 0) { emptyEl.hidden = false; }
+else {
+  listEl.innerHTML = classes.map(function (c) {
+    return '<article class="class"><h3>' + esc(c.title) + '</h3><p>' + esc(c.description) + '</p>' +
+      '<dl><dt>Starts</dt><dd>' + esc(c.start) + '</dd><dt>Time</dt><dd>' + esc(c.time) + '</dd><dt>Fee</dt><dd>' + esc(c.fee) + '</dd></dl>' +
+      '<a class="btn solid" href="' + esc(c.link) + '">Register now</a></article>';
+  }).join('');
+}
 
-        .pip-youtube-channel-btn:hover {
-            background: #CC0000;
-        }
+// Interactive effects
+var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.documentElement.classList.add('js');
 
-        .pip-youtube-channel-btn i {
-            font-size: 16px;
-        }
-        
-        .pip-youtube-channel-btn .btn-text {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            opacity: 1;
-            max-width: 140px;
-            margin: 0 0 0 6px;
-            white-space: nowrap;
-            pointer-events: none;
-            transform: translateX(0);
-            transition-property: opacity, transform, max-width, margin;
-            letter-spacing: -0.2px;
-        }
-        
-        .pip-youtube-channel-btn.compact {
-            border-radius: 50%;
-            padding: 0;
-        }
-        
-        .pip-youtube-channel-btn.compact .btn-text {
-            opacity: 0;
-            max-width: 0;
-            margin: 0;
-            transform: translateX(-10px);
-            pointer-events: none;
-        }
-        
-        .pip-youtube-channel-btn:hover, 
-        .pip-youtube-channel-btn:not(.compact) {
-            border-radius: 30px;
-            width: auto;
-            min-width: 36px;
-            padding: 0 15px;
-        }
-        
-        .pip-youtube-channel-btn:hover .btn-text,
-        .pip-youtube-channel-btn:not(.compact) .btn-text {
-            opacity: 1;
-            max-width: 200px;
-            margin: 0 6px 0 8px;
-            transform: translateX(0);
-        }
+// Scroll progress bar and header shadow
+var bar = document.getElementById('progress'), head = document.querySelector('header');
+function onScroll(){
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+  head.classList.toggle('scrolled', window.scrollY > 10);
+}
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
 
-        /* PiP mode styles */
-        .pip-mode {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 280px;
-            height: 160px;
-            z-index: 9999;
-        }
+// Reveal on scroll
+var items = document.querySelectorAll('.group, .facts div, .who li, .class, .empty, .close .wrap');
+items.forEach(function(el, i){ el.classList.add('reveal'); el.style.transitionDelay = (i % 4) * 90 + 'ms'; });
+// Count-up numbers
+function countUp(el){
+  var end = +el.dataset.count, suf = el.dataset.suffix || '', t0 = null;
+  if (reduce) { return; }
+  function step(t){
+    if (!t0) t0 = t;
+    var p = Math.min((t - t0) / 1400, 1), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+    el.textContent = v.toLocaleString('en-IN').replace(/,(\d{2}),/, ',$1,') + suf;
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      var n = e.target.querySelector('[data-count]'); if (n) countUp(n);
+      io.unobserve(e.target);
+    });
+  }, {threshold:.2});
+  items.forEach(function(el){ io.observe(el); });
+} else { items.forEach(function(el){ el.classList.add('in'); }); }
 
-        .pip-mode iframe {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-    -->
-
-    <script src="js/data.js"></script>
-    
-    <script>
-        // Simple scroll animation
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add animation class to all sections
-            const sections = document.querySelectorAll('section');
-            
-            // Function to check if element is in viewport
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top <= (window.innerHeight * 0.9) &&
-                    rect.bottom >= (window.innerHeight * 0.1)
-                );
-            }
-
-            
-            // Function to handle scroll events
-            function handleScroll() {
-                sections.forEach((section, index) => {
-                    if (isInViewport(section)) {
-                        // Add staggered delay based on index with more delay
-                        setTimeout(() => {
-                            section.classList.add('animated');
-                        }, 200 * (index % 4)); // Increased delay and added more stagger
-                    }
-                });
-            }
-            
-            // Initial check
-            sections.forEach(section => {
-                section.classList.add('animate-on-scroll');
-                
-                // Add staggered delay classes
-                const index = Array.from(sections).indexOf(section);
-                if (index % 3 === 1) section.classList.add('delay-1');
-                if (index % 3 === 2) section.classList.add('delay-2');
-            });
-            
-            // Add scroll event listener
-            window.addEventListener('scroll', handleScroll);
-            
-            // Initial check on page load
-            handleScroll();
-            
-            // Check again after a short delay to catch any elements already in view
-            setTimeout(handleScroll, 400);
-        });
-    </script>
-
-    <!-- PiP Video JavaScript - Commented out for later use -->
-    <!--
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const pipYouTubeChannelBtn = document.getElementById('pip-youtube-channel');
-            const pipContainer = document.getElementById('pip-video-container');
-            const pipVideo = document.getElementById('pip-video');
-            const pipMuteBtn = document.getElementById('pip-mute');
-            const pipMuteIcon = document.getElementById('pip-mute-icon');
-            const pipCloseBtn = document.getElementById('pip-close');
-
-            // Autoplay the video (required for some browsers to be muted)
-            pipVideo.play().catch(() => {});
-
-            // Mute/Unmute functionality
-            pipMuteBtn.addEventListener('click', () => {
-                pipVideo.muted = !pipVideo.muted;
-                pipMuteIcon.className = pipVideo.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-                pipMuteBtn.title = pipVideo.muted ? 'Unmute' : 'Mute';
-            });
-            // Set initial icon state
-            pipMuteIcon.className = pipVideo.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-            pipMuteBtn.title = pipVideo.muted ? 'Unmute' : 'Mute';
-
-            // Show YouTube channel button after 6 seconds with text
-            setTimeout(() => {
-                pipYouTubeChannelBtn.style.display = 'inline-flex';
-                // After 2 seconds, collapse to just the icon
-                setTimeout(() => {
-                    pipYouTubeChannelBtn.classList.add('compact');
-                }, 2000);
-            }, 6000);
-            pipYouTubeChannelBtn.addEventListener('click', () => {
-                window.open('https://www.youtube.com/@sunilkuruvilla', '_blank');
-            });
-
-            // Close PiP video
-            pipCloseBtn.addEventListener('click', () => {
-                pipContainer.style.display = 'none';
-                restorePipBtn.style.display = 'block';
-                pipVideo.pause();
-            });
-
-            // Restore PiP video
-            const restorePipBtn = document.createElement('button');
-            restorePipBtn.innerHTML = 'Restore Video';
-            restorePipBtn.style.position = 'fixed';
-            restorePipBtn.style.bottom = '10px';
-            restorePipBtn.style.left = '10px';
-            restorePipBtn.style.zIndex = '9999';
-            restorePipBtn.style.display = 'none';
-            document.body.appendChild(restorePipBtn);
-            restorePipBtn.addEventListener('click', () => {
-                pipContainer.style.display = 'block';
-                restorePipBtn.style.display = 'none';
-                pipVideo.play();
-            });
-        });
-    
-        async function initializePage() {
-            try {
-                await loadClassData();
-            } catch (error) {
-                console.error('Error initializing page:', error);
-            }
-        }
-
-        // Listen for storage changes from other windows/tabs
-        window.addEventListener('storage', async (event) => {
-            if (event.key === 'classesData') {
-                try {
-                    const newData = JSON.parse(event.newValue);
-                    classesData = newData;
-                    console.log('Data updated from storage event:', classesData);
-                    renderUpcomingClasses();
-                } catch (error) {
-                    console.error('Error handling storage event:', error);
-                }
-            }
-        });
-
-        // Listen for class data updates from other pages
-        window.addEventListener('classDataUpdated', (event) => {
-            classesData = event.detail.data;
-            console.log('Data updated from event:', classesData);
-            renderUpcomingClasses();
-        });
-
-        // Initialize when DOM is loaded
-        document.addEventListener('DOMContentLoaded', initializePage);
-    </script>
+// Program filter
+var chips = document.querySelectorAll('.chip'), groups = document.querySelectorAll('.group');
+chips.forEach(function(chip){
+  chip.addEventListener('click', function(){
+    chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip); });
+    var f = chip.dataset.f;
+    groups.forEach(function(g){
+      var show = f === 'all' || g.dataset.g === f;
+      if (show) { g.hidden = false; requestAnimationFrame(function(){ g.classList.remove('off'); }); }
+      else { g.classList.add('off'); setTimeout(function(){ if (g.classList.contains('off')) g.hidden = true; }, reduce ? 0 : 260); }
+    });
+  });
+});
+</script>
+<script>
+(function(){
+  var fab=document.getElementById('fab'),b=document.getElementById('fab-btn');
+  function set(o){fab.classList.toggle('open',o);b.setAttribute('aria-expanded',o);}
+  b.addEventListener('click',function(e){e.stopPropagation();set(!fab.classList.contains('open'));});
+  document.addEventListener('click',function(e){if(!fab.contains(e.target))set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false);b.focus();}});
+  [].forEach.call(fab.querySelectorAll('[data-copy]'),function(c){
+    c.addEventListener('click',function(){
+      var t=c.dataset.copy;
+      function done(){c.textContent='Copied';c.classList.add('ok');setTimeout(function(){c.textContent='Copy';c.classList.remove('ok');},1600);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){});}
+      else{var x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();try{document.execCommand('copy');done();}catch(_){}document.body.removeChild(x);}
+    });
+  });
+})();
+</script>
 </body>
 </html>
